@@ -82,6 +82,35 @@ pip install -r requirements.txt
 ### Setup
 It is worth noting that the "safety helmet detection" provides functionality to download it in YOLOv11 format, which is recommended. 
 
+1. Retrieve the Safety Helmet Detection Dataset in YOLOv11 format from the provided [link](https://universe.roboflow.com/zayed-uddin-chowdhury-ghymx/safety-helmet-wearing-dataset/dataset/3/download/yolov11). Download it as a zip file and ensure to place it within the main folder of the cloned repository named safety-helmet-detection.
+
+```bash
+mv /path/to/source /path/to/destination
+```
+
+2. Inside the cloned repository, execute the following command in order to unzip the BDBD dataset necessary for the project elaboration.
+
+```bash
+unzip Safety-Helmet-Wearing-Dataset.v3-base-dataset.yolov11.zip -d Safety-Helmet-Detection
+```
+
+3. One notable aspect of YOLO is its dependency on a .yaml file to delineate the paths for both training data (images and labels) and testing, as well as the classes to be identified. As we downloaded our dataset in YOLOv11 format, this already comes done by default and well-structured.
+
+## Training of neural networks
+The training of the neural network will be accomplished by executing the train.py file, passing a series of arguments that define the characteristics of the neural network. It's important to note that the training process entails just one phase, training the network responsible for detecting the helmets worn by each person. The arguments to be specified are:
+
+- **data:** This parameter represents the path leading to the .yaml file associated with each dataset.
+- **imgsz:** Refers to the image size utilized during training.
+- **epochs:** Denotes the number of training epochs. The inclusion of the early stopping attribute allows for the termination of training if the model fails to demonstrate improvement after a specified number of epochs.
+- **batch:** Specifies the batch size utilized during training.
+- **name:** Represents the name assigned to the neural network.
+- **model_size:** This parameter offers a selection of options ('n', 's', 'm', 'l', 'x') corresponding to different versions of YOLOv8 that can be trained.
+
+```bash
+python /complete/path/to/src/train.py --data /complete/path/to/BDBD/data.yaml --imgsz 640 --epochs 400 --batch 32 --name svhn_yolov8s --model_size s
+```
+
+In case of not having the necessary time or resources to train the neural networks, the weights of a neural networks to try it is provided!
 
 ## Data Details
 - [Safety Helmet Detection](https://universe.roboflow.com/zayed-uddin-chowdhury-ghymx/safety-helmet-wearing-dataset/dataset/3).
