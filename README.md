@@ -104,10 +104,10 @@ The training of the neural network will be accomplished by executing the train.p
 - **epochs:** Denotes the number of training epochs. The inclusion of the early stopping attribute allows for the termination of training if the model fails to demonstrate improvement after a specified number of epochs.
 - **batch:** Specifies the batch size utilized during training.
 - **name:** Represents the name assigned to the neural network.
-- **model_size:** This parameter offers a selection of options ('n', 's', 'm', 'l', 'x') corresponding to different versions of YOLOv8 that can be trained.
+- **model_size:** This parameter offers a selection of options ('n', 's', 'm', 'l', 'x') corresponding to different versions of YOLOv11 that can be trained.
 
 ```bash
-python /complete/path/to/src/train.py --data /complete/path/to/BDBD/data.yaml --imgsz 640 --epochs 400 --batch 32 --name svhn_yolov8s --model_size s
+python /complete/path/to/src/train.py --data /complete/path/to/BDBD/data.yaml --imgsz 640 --epochs 400 --batch 32 --name safety_helmet_yolov11s --model_size s
 ```
 
 In case of not having the necessary time or resources to train the neural networks, the weights of a neural networks to try it is provided!
