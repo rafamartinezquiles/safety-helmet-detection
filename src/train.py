@@ -3,7 +3,7 @@ from ultralytics import YOLO
 
 def train_yolo(data, imgsz, epochs, batch, name, model_size):
     # Determine model path based on model size
-    model = YOLO(f'yolov11{model_size}.pt')
+    model = YOLO(f'yolo11{model_size}.pt')
     
     # Training
     results = model.train(data=data, imgsz=imgsz, epochs=epochs, batch=batch, name=name)
