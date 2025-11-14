@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['hat', 'person']
+
+roboflow:
+  workspace: zayed-uddin-chowdhury-ghymx
+  project: safety-helmet-wearing-dataset
+  version: 3
+  license: Public Domain
+  url: https://universe.roboflow.com/zayed-uddin-chowdhury-ghymx/safety-helmet-wearing-dataset/dataset/3
