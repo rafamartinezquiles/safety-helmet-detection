@@ -1,12 +1,19 @@
 import argparse
 from ultralytics import YOLO
 
-def train_yolo(data, imgsz, epochs, batch, name, model_size):
+def train_yolo(data, imgsz, epochs, batch, name, model_size, patience):
     # Determine model path based on model size
     model = YOLO(f'yolo11{model_size}.pt')
     
     # Training
-    results = model.train(data=data, imgsz=imgsz, epochs=epochs, batch=batch, name=name)
+    results = model.train(
+        data=data,
+        imgsz=imgsz,
+        epochs=epochs,
+        batch=batch,
+        name=name,
+        patience=patience  # early stopping factor (epochs without improvement)
+    )
 
 if __name__ == "__main__":
     # Create argument parser
@@ -19,9 +26,11 @@ if __name__ == "__main__":
     parser.add_argument('--batch', type=int, help='Batch size', required=True)
     parser.add_argument('--name', type=str, help='Name for the model', required=True)
     parser.add_argument('--model_size', type=str, help='Size of YOLO model (n, s, m, l, x)', required=True, choices=['n', 's', 'm', 'l', 'x'])
+    parser.add_argument('--patience', type=int, help='Early stopping patience (epochs without improvement)', default=50)
     
     # Parse arguments
     args = parser.parse_args()
     
     # Call the function with parsed arguments
-    train_yolo(args.data, args.imgsz, args.epochs, args.batch, args.name, args.model_size)
+    train_yolo(args.data, args.imgsz, args.epochs, args.batch, args.name, args.model_size, args.patience)
+
