@@ -26,7 +26,7 @@ if __name__ == "__main__":
     parser.add_argument('--batch', type=int, help='Batch size', required=True)
     parser.add_argument('--name', type=str, help='Name for the model', required=True)
     parser.add_argument('--model_size', type=str, help='Size of YOLO model (n, s, m, l, x)', required=True, choices=['n', 's', 'm', 'l', 'x'])
-    parser.add_argument('--patience', type=int, help='Early stopping patience (epochs without improvement)', default=50)
+    parser.add_argument('--patience', type=int, help='Early stopping patience (epochs without improvement)', default=15)
     
     # Parse arguments
     args = parser.parse_args()
