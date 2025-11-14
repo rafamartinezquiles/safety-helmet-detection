@@ -1,2 +1,5 @@
 # Automated Detection of Safety Helmet Compliance Using Deep Learning
 This project applies modern computer vision techniques to identify whether individuals are wearing safety helmets in real-world scenes. Leveraging frameworks such as MXNet, GluonCV, and OpenCV, it provides a complete pipeline for detecting both helmet-wearing and non-helmet-wearing heads across diverse environments. Pretrained models and a curated dataset enable fast experimentation and reliable inference for industrial safety applications.
+
+### References
+- Safety Helmet Dataset: https://universe.roboflow.com/zayed-uddin-chowdhury-ghymx/safety-helmet-wearing-dataset/dataset/3
