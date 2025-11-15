@@ -1,13 +1,12 @@
 # Automated Detection of Safety Helmet Compliance Using Deep Learning
 This project applies modern computer vision techniques to identify whether individuals are wearing safety helmets in real-world scenes. Leveraging frameworks such as MXNet, GluonCV, and OpenCV, it provides a complete pipeline for detecting both helmet-wearing and non-helmet-wearing heads across diverse environments. Pretrained models and a curated dataset enable fast experimentation and reliable inference for industrial safety applications.
-![](images/results_accuracy.png)
+![](images/original/introduction.jpg)
 
 
 ## Overview and Background
 Identifying whether individuals are wearing safety helmets in complex, real-world scenes requires both precise object localization and reliable classification of headgear. This involves detecting the head region of a person, determining the presence or absence of a helmet, and handling challenges such as varying lighting conditions, diverse poses, and crowded industrial settings. Building on established research and practical datasets, this project applies deep-learning–based object detectors to accurately recognize helmet compliance in static images.
 
 This repository investigates modern Convolutional Neural Network (CNN) architectures—particularly leveraging MXNet, GluonCV, and YOLO-based detection modules—to differentiate between “helmet” and “no-helmet” cases within natural scenes. Using publicly available and meticulously labeled datasets, the system achieves strong performance in both accuracy and inference speed, making it suitable for safety-monitoring applications in industrial, construction, and surveillance environments.
-![](images/results_accuracy.png)
 
 ## Table of Contents
 ```
@@ -22,6 +21,7 @@ safety-helmet-detection
 |   |   |__ helmet_off.jpg
 |   |   |__ people_on.jpg
 |   |   |__ video.mp4
+|   |   |__ introduction.jpg
 |__ Safety-Helmet-Detection
 |   |__ data.yaml
 |   |__ README.dataset.txt
