@@ -143,7 +143,7 @@ The processed frames are encoded back into a new video file, saving an annotated
 python src/video_prediction.py <model_path(.pt)> <input_video> <output_video>
 ```
 
-![](images/video_gif.gif)
+![](images/detections/video_gif.gif)
 
 ## Data Details
 - [Safety Helmet Detection](https://universe.roboflow.com/zayed-uddin-chowdhury-ghymx/safety-helmet-wearing-dataset/dataset/3).
