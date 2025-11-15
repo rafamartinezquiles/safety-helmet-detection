@@ -132,6 +132,19 @@ To process an entire directory of images, simply provide a folder path:
 python src/image_prediction.py <model_path(.pt)>  <input_folder> <output_folder>
 ```
 
+### Video format
+Using the code for video helmet-compliance detection, you can run predictions on complete video files by specifying the appropriate paths in place of <model_path(.pt)>, <input_video>, and <output_video>. When executed, the script reads the input stream frame by frame and applies the YOLOv11 model to identify two classes: helmet and person (no-helmet).
+
+For every detection in each frame, the system draws a colored bounding box—green for individuals wearing a helmet and red for those without one—allowing for quick, continuous visual assessment of safety compliance throughout the entire video. During execution, the console output reports progress (such as the number of processed frames and basic video properties like resolution and FPS), helping you monitor performance and throughput over time.
+
+The processed frames are encoded back into a new video file, saving an annotated version of the original clip at the specified output path. This results in a fully overlaid safety-monitoring video that can be reviewed, shared, or integrated into downstream analytics pipelines.
+
+```bash
+python src/video_prediction.py <model_path(.pt)> <input_video> <output_video>
+```
+
+![](images/video_gif.gif)
+
 ## Data Details
 - [Safety Helmet Detection](https://universe.roboflow.com/zayed-uddin-chowdhury-ghymx/safety-helmet-wearing-dataset/dataset/3).
 
