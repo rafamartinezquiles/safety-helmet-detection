@@ -11,42 +11,29 @@ This repository investigates modern Convolutional Neural Network (CNN) architect
 
 ## Table of Contents
 ```
-BibObjectDetection
+safety-helmet-detection
 |__ images
-|   |__ results_accuracy.png 
-|   |__ threshold.jpg
-|   |__ yolo_application.png
-|__ weights
-|   |__ BDBD
-|   |   |__ yolov8l.pt
-|   |   |__ yolov8m.pt 
-|   |   |__ yolov8s.pt 
-|   |   |__ yolov8n.pt 
-|   |__ People
-|   |   |__ yolov8l.pt
-|   |   |__ yolov8m.pt 
-|   |   |__ yolov8s.pt 
-|   |   |__ yolov8n.pt 
-|   |__ SVHN
-|   |   |__ yolov8l.pt
-|   |   |__ yolov8m.pt 
-|   |   |__ yolov8s.pt 
-|   |   |__ yolov8n.pt 
-|__ labels
-|   |__ labels_test
-|   |   |__ all the labels in txt format
-|   |__ labels_train
-|   |   |__ all the labels in txt format
+|   |__ detections
+|   |   |__ helmet_detection.jpg
+|   |   |__ people_detection.jpg
+|   |   |__ video_detection.mp4
+|   |   |__ video_gif.gif
+|   |__ original
+|   |   |__ helmet_off.jpg
+|   |   |__ people_on.jpg
+|   |   |__ video.mp4
+|__ Safety-Helmet-Detection
+|   |__ data.yaml
+|   |__ README.dataset.txt
+|   |__ README.roboflow.txt
 |__ src
-    |__ create_csv.py
-    |__ create_yaml.py
-    |__ data_augmentation.py
     |__ image_prediction.py
-    |__ move_png_files.py
     |__ train.py
     |__ video_prediction.py
 README.md
 requirements.txt
+best.pt
+LICENSE
 ```
 
 ## Getting started
@@ -131,6 +118,9 @@ To process an entire directory of images, simply provide a folder path:
 ```bash
 python src/image_prediction.py <model_path(.pt)>  <input_folder> <output_folder>
 ```
+
+![](images/detections/people_detection.jpg)
+
 
 ### Video format
 Using the code for video helmet-compliance detection, you can run predictions on complete video files by specifying the appropriate paths in place of <model_path(.pt)>, <input_video>, and <output_video>. When executed, the script reads the input stream frame by frame and applies the YOLOv11 model to identify two classes: helmet and person (no-helmet).
