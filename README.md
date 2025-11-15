@@ -112,6 +112,26 @@ python /complete/path/to/src/train.py --data /complete/path/to/Safety-Helmet-Det
 
 In case of not having the necessary time or resources to train the neural networks, the weights of a neural networks to try it is provided!
 
+## Testing of neural networks
+At this point, a difference will be made between the type of file with which the neural network test is to be performed. The extracted results were established for the set of images that appear in the data used; however, an additional code has been prepared to test the neural networks in video format and to extract the people with safety helmets every a certain number of seconds, since in real time there are not enough resources.
+
+### Image format
+Using the code for image helmet-compliance detection, you can easily run predictions on individual images or entire folders by specifying the appropriate paths in place of <model_path(.pt)>, <input_image>, and <output_image>. When executed, the script processes each image and applies the YOLOv11 model to identify two classes: helmet and person (no-helmet).
+
+For every detection, the system draws a colored bounding box, green for individuals wearing a helmet and red for those without one, enabling quick visual assessment of safety compliance within the scene. During execution, the console output provides detailed logs including the input image size, the number of detections, and the time (in milliseconds) spent in each stage of the pipeline: preprocessing, inference, and postprocessing. These metrics offer valuable insight into the model’s performance and computational efficiency across different image resolutions.
+
+Additionally, when processing folders, the script automatically saves the annotated results for each image to the specified output directory, ensuring an organized and streamlined prediction workflow.
+
+```bash
+python src/image_prediction.py <model_path(.pt)>  <input_image> <output_image>
+```
+
+To process an entire directory of images, simply provide a folder path:
+
+```bash
+python src/image_prediction.py <model_path(.pt)>  <input_folder> <output_folder>
+```
+
 ## Data Details
 - [Safety Helmet Detection](https://universe.roboflow.com/zayed-uddin-chowdhury-ghymx/safety-helmet-wearing-dataset/dataset/3).
 
